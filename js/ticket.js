@@ -8,13 +8,14 @@
 // variabili generali
 
 const prezzoKm = 0.21;
-let prezzoTicket = document.getElementById("calcualated_ticket");
+let prezzoTicket;
+const prezzoFinale = document.getElementById('calculated_ticket');
 
 // chiedere all'utente quanti kilometri deve percorrere
 
-const userKm = prompt("Inserire quanti Kilometri devi percorrere: ");
+const userKm = parseInt(prompt("Inserire quanti Kilometri devi percorrere: "));
 // chiedere all'utente quanti anni ha
-const userAge = prompt("Inserisci la tua età (per un possibile sconto): ");
+const userAge =  parseInt(prompt("Inserisci la tua età (per un possibile sconto): "));
 
 // calcolare il prezzo del biglietto (senza sconto)
 prezzoTicket = userKm * prezzoKm;
@@ -32,4 +33,9 @@ if (userAge < 18 ) {
 }
 
 
-// prezzo finale
+// prezzo finale con arrotondamento a 2 cifre decimali
+prezzoTicket = prezzoTicket.toFixed(2);
+// stampa del prezzo finale
+
+prezzoFinale.innerHTML = `Il prezzo del biglietto per ${userKm} km è di ${prezzoTicket}€`;
+
