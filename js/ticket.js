@@ -27,15 +27,19 @@ let scontoKm;
 if (userAge < 18 ) {
     scontoKm = prezzoTicket * 0.20;
     prezzoTicket = prezzoTicket - scontoKm;
+    alert("Hai ottenuto uno sconto del 20% per essere minorenne!");
 } else if (userAge >= 65) {
     scontoKm = prezzoTicket * 0.40;
     prezzoTicket = prezzoTicket - scontoKm;
+    alert("Hai ottenuto uno sconto del 40% per essere over 65!");
+} else {
+    alert("Non hai ottenuto nessuno sconto!!!")
 }
 
 
 // prezzo finale con arrotondamento a 2 cifre decimali
 prezzoTicket = prezzoTicket.toFixed(2);
-// stampa del prezzo finale
 
+// stampa del prezzo finale
 prezzoFinale.innerHTML = `Il prezzo del biglietto per ${userKm} km è di ${prezzoTicket}€`;
 
