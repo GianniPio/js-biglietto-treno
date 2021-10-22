@@ -10,8 +10,8 @@
 const prezzoKm = 0.21;
 let prezzoTicket;
 let userName;
-const textName = document.getElementById('nome');
 let userCognome;
+const textName = document.getElementById('nome');
 const textCognome = document.getElementById('cognome');
 const textStato = document.getElementById('stato');
 const prezzoFinale = document.getElementById('calculated_ticket');
@@ -38,16 +38,12 @@ prezzoTicket = userKm * prezzoKm;
 
 // applicare lo sconto
 
-let scontoKm;
-
 if (userAge < 18 ) {
-    scontoKm = prezzoTicket * 0.20;
-    prezzoTicket = prezzoTicket - scontoKm;
+    prezzoTicket = prezzoTicket - (prezzoTicket * 0.20);
     alert("Hai ottenuto uno sconto del 20% per essere minorenne!");
     textStato.innerHTML = `Minorenne -- applicato sconto del 20%`;
 } else if (userAge >= 65) {
-    scontoKm = prezzoTicket * 0.40;
-    prezzoTicket = prezzoTicket - scontoKm;
+    prezzoTicket = prezzoTicket - (prezzoTicket * 0.40);
     alert("Hai ottenuto uno sconto del 40% per essere over 65!");
     textStato.innerHTML = `Over 65 -- applicato sconto del 40%`;
 } else {
