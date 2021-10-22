@@ -34,8 +34,8 @@ if (userAge < 18 ) {
 
 
 // prezzo finale con arrotondamento a 2 cifre decimali
-prezzoTicket = prezzoTicket.toFixed(2);
+// prezzoTicket = prezzoTicket.toFixed(2);
 
 // stampa del prezzo finale
-prezzoFinale.innerHTML = `Il prezzo del biglietto per ${userKm} km è di ${prezzoTicket}€`;
+prezzoFinale.innerHTML = `Il prezzo del biglietto per ${userKm} km è di ${prezzoTicket.toFixed(2)}€`;
 
